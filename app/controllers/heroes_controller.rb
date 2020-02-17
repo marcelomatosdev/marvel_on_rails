@@ -5,5 +5,7 @@ class HeroesController < ApplicationController
     @heroes = Hero.all
   end
 
-  def show; end
+  def show
+    @hero = Hero.find(params[:id])
+  end
 end
