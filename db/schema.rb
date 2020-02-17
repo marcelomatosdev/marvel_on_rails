@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_164653) do
+ActiveRecord::Schema.define(version: 2020_02_17_205825) do
+
+  create_table "comics", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "modified"
+    t.integer "page_count"
+    t.string "image_path"
+    t.string "image_extension"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "heros", force: :cascade do |t|
     t.string "name"

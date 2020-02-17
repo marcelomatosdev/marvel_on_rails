@@ -1,0 +1,6 @@
+<h1>Comics#index</h1>
+<%@comics.each do |comic|%>
+  <h2><%=link_to comic.title, comic%></h2>
+  <h3><%=comic.id%></h3>
+<%end%>
+<p>Find me in app/views/comics/index.html.erb</p>
