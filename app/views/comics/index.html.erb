@@ -1,6 +1,23 @@
-<h1>Comics#index</h1>
+
+
+
+
 <%@comics.each do |comic|%>
-  <h3><%=link_to comic.title, comic%></h3>
-  <img src="<%=comic.thumbnail_path%>.<%=comic.thumbnail_extension%>" alt="Comic image" width="100px"/>
+  <div class="column">
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure>
+              <img src="<%=comic.thumbnail_path%>.<%=comic.thumbnail_extension%>" alt="<%=comic.title%>" width="100px"/>
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%=link_to comic.title, comic%></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 <%end%>
-<p>Find me in app/views/comics/index.html.erb</p>
