@@ -28,3 +28,6 @@ end
 
 # Populate the Hero database
 # require_relative 'heroes_seed.rb'
+
+# Populate the Comic database
+require_relative 'comics_seed.rb'

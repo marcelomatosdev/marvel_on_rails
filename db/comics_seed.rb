@@ -1,24 +1,31 @@
 # frozen_string_literal: true
 
-Hero.destroy_all
+Comic.destroy_all
 
-def characters_url(offset)
-  "#{@base_url}characters?offset=#{offset}&#{@authorization}"
+def comics_url(offset)
+  "#{@base_url}comics?characters=1009165&limit=100&offset=#{offset}&#{@authorization}"
 end
 
 i = 0
-@count = 20
-while @count == 20
-  # while i < 60
-  characters = marvel_fetch(characters_url(i))
-  results = characters['data']['results']
+@count = 100
+# while @count == 100
+while i < 100
+  comics = marvel_fetch(comics_url(i))
+  results = comics['data']['results']
+  # puts results
   @count = results.count
   results.each do |result|
     id = result['id']
-    name = result['name']
-    Hero.create(name: name, id: id)
+    title = result['title']
+    description = result['description']
+    pages = result['pageCount']
+    thumbnail_path = result['thumbnail']['path']
+    thumbnail_extension = result['thumbnail']['extension']
+    image_path = result['images'][0]['path']
+    image_extension = result['images'][0]['extension']
+    Comic.create(id: id, title: title, description: description, page_count: pages, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension, image_path: image_path, image_extension: image_extension)
   end
-  i += 20
+  i += 101
 end
 
-puts "Generated #{Hero.count} heros."
+puts "Generated #{Comic.count} comics."

@@ -1,3 +1,9 @@
 <h1>Comics#show</h1>
 <h2><%=@comic.title%></h2>
+<p><%=@comic.id%></p>
+<p><%=@comic.description%></p>
+<p><%=@comic.page_count%></p>
+<p><%=@comic.image_path%></p>
+<p><%=@comic.image_extension%></p>
+<img src="<%=@comic.image_path%>.<%=@comic.image_extension%>" alt="Comic image" />
 <p>Find me in app/views/comics/show.html.erb</p>
