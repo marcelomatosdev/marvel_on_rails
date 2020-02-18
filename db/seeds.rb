@@ -15,9 +15,9 @@ require 'json'
 require 'digest/md5'
 
 timestamp = 1.to_s
-private_key = 'a797417c58135c471e2ce7e3ebd1c0059fb8947f'
+require_relative '../config/authorization.rb'
 public_key = '9f15a9eb294cde58d5afb8e2f27ad624'
-digest = Digest::MD5.hexdigest(timestamp + private_key + public_key)
+digest = Digest::MD5.hexdigest(timestamp + @private_key + public_key)
 
 @base_url = 'http://gateway.marvel.com/v1/public/'
 @authorization = 'ts=1&apikey=9f15a9eb294cde58d5afb8e2f27ad624&hash=2dfe1145467986ae6fcee19b52a480db'
