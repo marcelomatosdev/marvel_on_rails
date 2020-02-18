@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-Hero.destroy_all
-
 def characters_url(offset)
   "#{@base_url}characters?limit=100&offset=#{offset}&#{@authorization}"
 end

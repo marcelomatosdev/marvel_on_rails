@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
 class Comic < ApplicationRecord
-  has_and_belongs_to_many :heros
+  has_many :character_comics
+  has_many :heros, through: :character_comics, dependent: :destroy
 end

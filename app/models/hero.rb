@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Hero < ApplicationRecord
-  has_and_belongs_to_many :comics
+  has_many :character_comics
+  has_many :comics, through: :character_comics, dependent: :destroy
 end
