@@ -1,5 +1,7 @@
+<ul>
 <%@heroes.each do |hero|%>
-  <div class="column">
+
+  <div class="column is-4">
     <div class="card">
       <div class="card-content">
         <div class="media">
@@ -13,8 +15,9 @@
             <p> <%=hero.description%></p>
           </div>
         </div>
-
        </div>
     </div>
   </div>
+
 <%end%>
+</ul>

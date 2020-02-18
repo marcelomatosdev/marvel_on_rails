@@ -14,5 +14,7 @@
  *= require_self
  */
 
-
+ header{
+  margin-bottom: 2rem;
+}
 
