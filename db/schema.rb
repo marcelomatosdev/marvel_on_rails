@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_010920) do
+ActiveRecord::Schema.define(version: 2020_02_18_190414) do
+
+  create_table "character_comic_links", force: :cascade do |t|
+    t.integer "hero_id", null: false
+    t.integer "comic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_character_comic_links_on_comic_id"
+    t.index ["hero_id"], name: "index_character_comic_links_on_hero_id"
+  end
 
   create_table "comics", force: :cascade do |t|
     t.string "title"
@@ -34,4 +43,6 @@ ActiveRecord::Schema.define(version: 2020_02_18_010920) do
     t.string "description"
   end
 
+  add_foreign_key "character_comic_links", "comics"
+  add_foreign_key "character_comic_links", "heros"
 end
