@@ -1,13 +1,15 @@
-<div class='column is-multiline'>
-    <div class="card">
+
+  <div class="column">
+    <div class="card1">
       <div class="card-content">
         <div class="media">
           <div class="media-left">
             <figure>
-              <img src="<%=@comic.thumbnail_path%>.<%=@comic.thumbnail_extension%>" alt="<%=@comic.title%>" width="400px"/>
+              <img  src="<%=@comic.thumbnail_path%>.<%=@comic.thumbnail_extension%>" alt="<%=@comic.title%>" width="300px" />
             </figure>
-          </div>
+            </div>
           <div class="media-content">
+
             <p class="title is-4"><%=link_to @comic.title, @comic%></p>
             <p><%=@comic.description%></p>
             <br>
@@ -17,7 +19,7 @@
       </div>
 
     </div>
-    <footer class="card-footer">
+  <footer class="card-footer">
     <p class="card-footer-item">
     Characters:
 
@@ -26,8 +28,7 @@
 
     <p class="card-footer-item">
     Stories:
-</footer>
-  </div>
-</div>
+  </footer>
 
+</div>
 

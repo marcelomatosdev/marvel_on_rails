@@ -1,7 +1,6 @@
-<ul>
+<div class="columns is-multiline">
 <%@heroes.each do |hero|%>
-
-  <div class="column is-4">
+  <div class="column is-one-third">
     <div class="card">
       <div class="card-content">
         <div class="media">
@@ -15,9 +14,10 @@
             <p> <%=hero.description%></p>
           </div>
         </div>
-       </div>
+      </div>
     </div>
   </div>
-
 <%end%>
-</ul>
+</div>
+
+

@@ -1,9 +1,6 @@
-
-
-
-
+<div class="columns is-multiline">
 <%@comics.each do |comic|%>
-  <div class="column">
+  <div class="column is-one-third">
     <div class="card">
       <div class="card-content">
         <div class="media">
@@ -13,11 +10,11 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4"><%=link_to comic.title, comic%></p>
+            <p class="title is-5"><%=link_to comic.title, comic%></p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 <%end%>
+</div>
