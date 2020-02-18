@@ -3,7 +3,7 @@
 Comic.destroy_all
 
 def comics_url(offset)
-  "#{@base_url}comics?characters=1009165&limit=100&offset=#{offset}&#{@authorization}"
+  "#{@base_url}comics?orderBy=-onsaleDate&characters=1009165&limit=100&offset=#{offset}&#{@authorization}"
 end
 
 i = 0

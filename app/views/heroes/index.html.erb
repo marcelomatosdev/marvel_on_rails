@@ -1,5 +1,8 @@
 <h1>Heroes#index</h1>
+
+
 <%@heroes.each do |hero|%>
   <h2><%=link_to hero.name, hero%></h2>
   <h3><%=hero.id%></h3>
+  <img src="<%=hero.thumbnail_path%>.<%=hero.thumbnail_extension%>" alt="hero image" width="100px"/>
 <%end%>
