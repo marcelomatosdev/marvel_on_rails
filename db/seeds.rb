@@ -11,7 +11,7 @@
 # Avengers 1009165
 
 CharacterComic.destroy_all
-# Comic.destroy_all
+Comic.destroy_all
 # Hero.destroy_all
 
 require 'open-uri'
@@ -34,6 +34,6 @@ end
 # require_relative 'heroes_seed.rb'
 
 # Populate the Comic database
-# require_relative 'comics_seed.rb'
+require_relative 'comics_seed.rb'
 
 require_relative 'character_comics_seed.rb'

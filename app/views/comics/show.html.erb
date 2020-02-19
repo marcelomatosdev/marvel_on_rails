@@ -31,4 +31,19 @@
   </footer>
 
 </div>
+<div>
+<% if @comic.character_comics.empty?%>
+      <p>No characters listed for <%= @comic.name %></p>
+    <% else %>
+      <ul>
+        <% if @comic.character_comics.each do |characterComic| %>
+          <li>
+            <%= link_to characterComic.hero.name, characterComic.hero%>
+          </li>
+        <% end %>
+        <%end%>
+      </ul>
+    <% end %>
+    </div>
+
 

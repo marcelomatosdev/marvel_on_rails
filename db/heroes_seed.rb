@@ -7,7 +7,7 @@ end
 i = 0
 @count = 100
 # while @count == 100
-while i < 100
+while i < 200
   characters = marvel_fetch(characters_url(i))
   results = characters['data']['results']
   @count = results.count
