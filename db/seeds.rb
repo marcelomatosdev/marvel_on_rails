@@ -1,17 +1,8 @@
 # frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# frozen_string_literal: true
 
-# Avengers 1009165
-
-CharacterComic.destroy_all
-Comic.destroy_all
+# Planet.destroy_all
+# CharacterComic.destroy_all
+# Comic.destroy_all
 # Hero.destroy_all
 
 require 'open-uri'
@@ -34,6 +25,9 @@ end
 # require_relative 'heroes_seed.rb'
 
 # Populate the Comic database
-require_relative 'comics_seed.rb'
+# require_relative 'comics_seed.rb'
 
-require_relative 'character_comics_seed.rb'
+# Populate the Character_Comic join database
+# require_relative 'character_comics_seed.rb'
+
+require_relative 'planet_seed.rb'

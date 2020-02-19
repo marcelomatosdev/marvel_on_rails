@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_192955) do
+ActiveRecord::Schema.define(version: 2020_02_19_181759) do
 
   create_table "character_comics", force: :cascade do |t|
     t.integer "hero_id", null: false
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2020_02_18_192955) do
     t.string "thumbnail_path"
     t.string "thumbnail_extension"
     t.string "description"
+    t.string "planet"
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "character_comics", "comics"
