@@ -10,9 +10,10 @@
 
 # Avengers 1009165
 
-# CharacterComic.destroy_all
-# Comic.destroy_all
-# Hero.destroy_all
+Planet.destroy_all
+CharacterComic.destroy_all
+Comic.destroy_all
+Hero.destroy_all
 
 require 'open-uri'
 require 'json'
@@ -33,10 +34,10 @@ end
 require_relative 'planets_seed.rb'
 
 # Populate the Hero database
-# require_relative 'heroes_seed.rb'
+require_relative 'heroes_seed.rb'
 
 # Populate the Comic database
-# require_relative 'comics_seed.rb'
+require_relative 'comics_seed.rb'
 
 # Populate the Character_Comic join database
-# require_relative 'character_comics_seed.rb'
+require_relative 'character_comics_seed.rb'
