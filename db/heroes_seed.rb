@@ -17,8 +17,8 @@ while i < 200
     description = result['description']
     thumbnail_path = result['thumbnail']['path']
     thumbnail_extension = result['thumbnail']['extension']
-    planet = Planet.all.sample(1)
-    Hero.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension, planet: planet)
+
+    Hero.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension)
   end
   i += 100
 end
