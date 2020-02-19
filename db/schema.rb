@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,49 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_218_192_955) do
-  create_table 'character_comic_links', force: :cascade do |t|
-    t.integer 'hero_id', null: false
-    t.integer 'comic_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['comic_id'], name: 'index_character_comic_links_on_comic_id'
-    t.index ['hero_id'], name: 'index_character_comic_links_on_hero_id'
+ActiveRecord::Schema.define(version: 2020_02_18_192955) do
+
+  create_table "character_comics", force: :cascade do |t|
+    t.integer "hero_id", null: false
+    t.integer "comic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_character_comics_on_comic_id"
+    t.index ["hero_id"], name: "index_character_comics_on_hero_id"
   end
 
-  create_table 'character_comics', force: :cascade do |t|
-    t.integer 'hero_id', null: false
-    t.integer 'comic_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['comic_id'], name: 'index_character_comics_on_comic_id'
-    t.index ['hero_id'], name: 'index_character_comics_on_hero_id'
+  create_table "comics", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "modified"
+    t.integer "page_count"
+    t.string "image_path"
+    t.string "image_extension"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "thumbnail_path"
+    t.string "thumbnail_extension"
   end
 
-  create_table 'comics', force: :cascade do |t|
-    t.string 'title'
-    t.string 'description'
-    t.datetime 'modified'
-    t.integer 'page_count'
-    t.string 'image_path'
-    t.string 'image_extension'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'thumbnail_path'
-    t.string 'thumbnail_extension'
+  create_table "heros", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "thumbnail_path"
+    t.string "thumbnail_extension"
+    t.string "description"
   end
 
-  create_table 'heros', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'thumbnail_path'
-    t.string 'thumbnail_extension'
-    t.string 'description'
-  end
-
-  # add_foreign_key "character_comic_links", "comics"
-  # add_foreign_key "character_comic_links", "heros"
-  add_foreign_key 'character_comics', 'comics'
-  add_foreign_key 'character_comics', 'heros'
+  add_foreign_key "character_comics", "comics"
+  add_foreign_key "character_comics", "heros"
 end
