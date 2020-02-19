@@ -33,7 +33,7 @@
 </div>
 <div>
 <% if @comic.character_comics.empty?%>
-      <p>No characters listed for <%= @comic.name %></p>
+      <p>No characters listed for <%= @comic.title %></p>
     <% else %>
       <ul>
         <% if @comic.character_comics.each do |characterComic| %>
