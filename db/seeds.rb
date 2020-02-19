@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # Planet.destroy_all
-# CharacterComic.destroy_all
+CharacterComic.destroy_all
 # Comic.destroy_all
-# Hero.destroy_all
+Hero.destroy_all
 
 require 'open-uri'
 require 'json'
@@ -22,7 +22,7 @@ def marvel_fetch(url)
 end
 
 # Populate the Hero database
-# require_relative 'heroes_seed.rb'
+require_relative 'heroes_seed.rb'
 
 # Populate the Comic database
 # require_relative 'comics_seed.rb'
@@ -30,4 +30,5 @@ end
 # Populate the Character_Comic join database
 # require_relative 'character_comics_seed.rb'
 
-require_relative 'planet_seed.rb'
+# Populate the Planet database
+# require_relative 'planet_seed.rb'
