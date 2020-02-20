@@ -1,0 +1,15 @@
+header{
+  margin-bottom: 2rem;
+}
+
+.card{
+  height:300px;
+ }
+
+ p {
+
+   overflow: hidden;
+   text-overflow: ellipsis ;
+   max-height: fit-content;
+
+ }
