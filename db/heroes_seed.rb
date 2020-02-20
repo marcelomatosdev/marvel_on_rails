@@ -18,7 +18,8 @@ while i < 200
     description = result['description']
     thumbnail_path = result['thumbnail']['path']
     thumbnail_extension = result['thumbnail']['extension']
-    planet.heros.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension)
+    villain = Faker::DcComics.villain
+    planet.heros.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension, villain: villain)
   end
   i += 100
 end
