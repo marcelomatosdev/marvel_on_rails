@@ -1,3 +1,7 @@
+<p class="subtitle is-7">
+Found <%=pluralize(@heroes.size, 'result')%>
+for the search term "<%=params[:search_term] %>".
+</p>
 
 <div class="columns is-multiline">
 <%@heroes.each do |hero|%>

@@ -10,6 +10,6 @@ class HeroesController < ApplicationController
   end
 
   def search
-    @heroes = Hero.where(name: params[:search_term])
+    @heroes = Hero.where('name LIKE ?', "%#{params[:search_term]}%")
   end
 end
