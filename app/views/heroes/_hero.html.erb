@@ -1,0 +1,41 @@
+<div class="columns">
+  <div class="card1">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure>
+            <img src="<%=@hero.thumbnail_path%>.<%=@hero.thumbnail_extension%>" alt="<%=@hero.name%>" width="300px"/>
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4 has-text-danger"><%=@hero.name%></p>
+          <p class="title is-6">Home Planet: <%= @hero.planet.name %></p>
+          <p class="title is-6">Archrival: <%= @hero.villain %></p>
+          <p><%=@hero.description%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="card-footer">
+  <p class="card-footer-item">
+  Comics: <%=@hero.character_comics.count%>
+</footer>
+
+<div class="columns is-multiline">
+  <div class="column is-one-third">
+    <% if @hero.character_comics.empty?%>
+        <p>No comics listed for <%= @hero.name %></p>
+    <% else %>
+      <ul>
+        <% @hero.character_comics.each do |characterComic| %>
+          <li>
+            <%= link_to characterComic.comic.title, characterComic.comic%>
+          </li>
+        <%end%>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
