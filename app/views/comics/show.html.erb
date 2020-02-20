@@ -25,47 +25,11 @@
 
 <footer class="card-footer">
     <p class="card-footer-item">
-     Character:  <%=@comic.character_comics.count%>
-
-    <p class="card-footer-item">
-    Series:
-
-    <p class="card-footer-item">
-    Stories:
+     Characters:  <%=@comic.character_comics.count%>
   </footer>
 
-<div class="columns is-centered is-multiline">
+<div class="columns is-multiline">
   <div class="column is-one-third">
-    <% if @comic.character_comics.empty?%>
-      <p>No characters listed for <%= @comic.title %></p>
-    <% else %>
-      <ul>
-        <% if @comic.character_comics.each do |characterComic| %>
-          <li>
-            <%= link_to characterComic.hero.name, characterComic.hero%>
-          </li>
-
-        <% end %>
-        <%end%>
-      </ul>
-    <% end %>
-  </div>
-  <div class="column">
-    <% if @comic.character_comics.empty?%>
-      <p>No characters listed for <%= @comic.title %></p>
-    <% else %>
-      <ul>
-        <% if @comic.character_comics.each do |characterComic| %>
-          <li>
-            <%= link_to characterComic.hero.name, characterComic.hero%>
-          </li>
-
-        <% end %>
-        <%end%>
-      </ul>
-    <% end %>
-  </div>
-<div class="column">
     <% if @comic.character_comics.empty?%>
       <p>No characters listed for <%= @comic.title %></p>
     <% else %>

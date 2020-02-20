@@ -14,7 +14,6 @@ while i < 200
   @count = results.count
   results.each do |result|
     id = result['id']
-    puts id
     title = result['title']
     description = result['description']
     pages = result['pageCount']

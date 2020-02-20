@@ -20,12 +20,6 @@
   <footer class="card-footer">
     <p class="card-footer-item">
       Comics: <%=@hero.character_comics.count%>
-
-    <p class="card-footer-item">
-    Series:
-
-    <p class="card-footer-item">
-    Stories:
   </footer>
   <% if @hero.character_comics.empty?%>
       <p>No comics listed for <%= @hero.name %></p>
