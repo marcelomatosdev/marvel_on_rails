@@ -9,26 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-
   </head>
 
 
   <body>
   <section class="section">
     <div class="container">
-    <header>
-      <h1 class="title is-1"><%= link_to 'Marvel on Rails', root_path %></h1>
-      <h2><%= link_to 'Characters', root_path %> | <%= link_to 'Comics', comics_path %> | About
-
-    </header>
-<div class="field">
-  <div class="control">
-  <div class="select is-info">
-      <%= select_tag(@search_id, options_for_select([['Search category', 1], ['Character', 2], ['Comic', 3]]),  {:class => "select is-info"})  %>
-</div>
-</div>
-</div>
-
+      <header>
+        <h1 class="title is-1"><%= link_to 'Marvel on Rails', root_path %></h1>
+        <h2><%= link_to 'Characters', root_path %> | <%= link_to 'Comics', comics_path %> | About </h2>
+      </header>
+      <div class="field">
+        <div class="control">
+        <div class="select is-info">
+          <%= select_tag(:search_id, options_for_select([['Search category', 1], ['Character', 2], ['Comic', 3]]),  {:class => "select is-info"})  %>
+        </div>
+        </div>
+      </div>
     <%= yield %>
+    </div>
+  </section>
   </body>
 </html>
