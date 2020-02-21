@@ -10,6 +10,6 @@ class HeroesController < ApplicationController
   end
 
   def search
-    @heroes = Hero.where('name LIKE ?', "%#{params[:search_term]}%")
+    @heroes = Hero.order(:name).page(params[:page]).where('name LIKE ?', "%#{params[:search_term]}%")
   end
 end

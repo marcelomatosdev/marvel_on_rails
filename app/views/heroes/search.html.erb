@@ -4,7 +4,7 @@
 Found <%=pluralize(@heroes.size, 'result')%>
 for the search term "<%=params[:search_term] %>".
 </p>
-
+<%=paginate @heroes%>
 <div class="columns is-multiline">
 <%@heroes.each do |hero|%>
   <div class="column is-one-third">
@@ -25,4 +25,5 @@ for the search term "<%=params[:search_term] %>".
     </div>
   </div>
 <%end%>
+
 </div>
