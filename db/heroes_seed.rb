@@ -3,11 +3,11 @@
 def characters_url(offset)
   "#{@base_url}characters?limit=100&offset=#{offset}&#{@authorization}"
 end
-
+@number_of_characters = 20 # There are about 1,700 characters available in the Marvel API
 i = 0
 @count = 100
 # while @count == 100
-while i < 200
+while i < @number_of_characters
   characters = marvel_fetch(characters_url(i))
   results = characters['data']['results']
   @count = results.count
