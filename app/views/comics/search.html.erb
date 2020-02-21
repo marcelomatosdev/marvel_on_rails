@@ -5,6 +5,7 @@
 Found <%=pluralize(@comics.size, 'result')%>
 for the search term "<%=params[:search_term] %>".
 </p>
+<%=paginate @comics%>
 <div class="columns is-multiline">
 <%@comics.each do |comic|%>
   <div class="column is-one-third">
@@ -25,3 +26,5 @@ for the search term "<%=params[:search_term] %>".
   </div>
 <%end%>
 </div>
+<%=paginate @comics%>
+
