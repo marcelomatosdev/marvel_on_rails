@@ -1,5 +1,6 @@
 <%=render partial: 'heroes/search_form'%>
 <br>
+<%=paginate @heroes%>
 <div class="columns is-multiline">
 <%@heroes.each do |hero|%>
   <div class="column is-one-third">
@@ -21,3 +22,5 @@
   </div>
 <%end%>
 </div>
+<%=paginate @heroes%>
+

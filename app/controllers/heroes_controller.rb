@@ -2,7 +2,7 @@
 
 class HeroesController < ApplicationController
   def index
-    @heroes = Hero.includes(:planet).order(:name)
+    @heroes = Hero.includes(:planet).order(:name).page(params[:page])
   end
 
   def show
