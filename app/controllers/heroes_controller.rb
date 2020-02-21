@@ -2,10 +2,14 @@
 
 class HeroesController < ApplicationController
   def index
-    @heroes = Hero.all
+    @heroes = Hero.includes(:planet).order(:name)
   end
 
   def show
-    @hero = Hero.find(params[:id])
+    @hero = Hero.includes(:planet).find(params[:id])
+  end
+
+  def search
+    @heroes = Hero.where('name LIKE ?', "%#{params[:search_term]}%")
   end
 end

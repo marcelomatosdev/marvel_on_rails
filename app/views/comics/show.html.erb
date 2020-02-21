@@ -1,84 +1,43 @@
-
-  <div class="column">
-    <div class="card1">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure>
-              <img  src="<%=@comic.thumbnail_path%>.<%=@comic.thumbnail_extension%>" alt="<%=@comic.title%>" width="300px" />
-            </figure>
-            </div>
-          <div class="media-content">
-
-            <p class="title is-4"><%=link_to @comic.title, @comic%></p>
-            <p><%=@comic.description%></p>
-            <br>
-            <p>Pages: <%=@comic.page_count%></p>
-          </div>
+<%=render partial: 'comics/search_form'%>
+<br>
+<div class="columns">
+  <div class="card1">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure>
+            <img  src="<%=@comic.thumbnail_path%>.<%=@comic.thumbnail_extension%>" alt="<%=@comic.title%>" width="300px" />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4 has-text-danger"><%=@comic.title%></p>
+          <p><%=@comic.description%></p>
+          <br>
+          <p>Pages: <%=@comic.page_count%></p>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>
 
+
 <footer class="card-footer">
-    <p class="card-footer-item">
-     Character:  <%=@comic.character_comics.count%>
+  <p class="card-footer-item">
+  Characters:  <%=@comic.character_comics.count%>
+</footer>
 
-    <p class="card-footer-item">
-    Series:
-
-    <p class="card-footer-item">
-    Stories:
-  </footer>
-
-<div class="columns is-centered is-multiline">
+<div class="columns is-multiline">
   <div class="column is-one-third">
     <% if @comic.character_comics.empty?%>
       <p>No characters listed for <%= @comic.title %></p>
     <% else %>
       <ul>
-        <% if @comic.character_comics.each do |characterComic| %>
+        <% @comic.character_comics.each do |characterComic| %>
           <li>
             <%= link_to characterComic.hero.name, characterComic.hero%>
           </li>
-
-        <% end %>
         <%end%>
       </ul>
     <% end %>
   </div>
-  <div class="column">
-    <% if @comic.character_comics.empty?%>
-      <p>No characters listed for <%= @comic.title %></p>
-    <% else %>
-      <ul>
-        <% if @comic.character_comics.each do |characterComic| %>
-          <li>
-            <%= link_to characterComic.hero.name, characterComic.hero%>
-          </li>
-
-        <% end %>
-        <%end%>
-      </ul>
-    <% end %>
-  </div>
-<div class="column">
-    <% if @comic.character_comics.empty?%>
-      <p>No characters listed for <%= @comic.title %></p>
-    <% else %>
-      <ul>
-        <% if @comic.character_comics.each do |characterComic| %>
-          <li>
-            <%= link_to characterComic.hero.name, characterComic.hero%>
-          </li>
-
-        <% end %>
-        <%end%>
-      </ul>
-    <% end %>
-  </div>
-
 </div>

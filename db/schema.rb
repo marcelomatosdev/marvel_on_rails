@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_193702) do
+ActiveRecord::Schema.define(version: 2020_02_20_010952) do
 
   create_table "character_comics", force: :cascade do |t|
     t.integer "hero_id", null: false
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 2020_02_19_193702) do
     t.string "thumbnail_extension"
     t.string "description"
     t.integer "planets_id"
+    t.integer "planet_id"
+    t.string "villain"
+    t.index ["planet_id"], name: "index_heros_on_planet_id"
     t.index ["planets_id"], name: "index_heros_on_planets_id"
   end
 
@@ -53,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_02_19_193702) do
 
   add_foreign_key "character_comics", "comics"
   add_foreign_key "character_comics", "heros"
+  add_foreign_key "heros", "planets"
 end

@@ -12,13 +12,14 @@ while i < 200
   results = characters['data']['results']
   @count = results.count
   results.each do |result|
+    planet = Planet.all.sample
     id = result['id']
     name = result['name']
     description = result['description']
     thumbnail_path = result['thumbnail']['path']
     thumbnail_extension = result['thumbnail']['extension']
-
-    Hero.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension)
+    villain = Faker::DcComics.villain
+    planet.heros.create(name: name, id: id, description: description, thumbnail_path: thumbnail_path, thumbnail_extension: thumbnail_extension, villain: villain)
   end
   i += 100
 end
