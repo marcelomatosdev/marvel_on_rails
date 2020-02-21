@@ -21,8 +21,14 @@
       <h2><%= link_to 'Characters', root_path %> | <%= link_to 'Comics', comics_path %> | About
 
     </header>
+<div class="field">
+  <div class="control">
+  <div class="select is-info">
+      <%= select_tag(@search_id, options_for_select([['Search category', 1], ['Character', 2], ['Comic', 3]]),  {:class => "select is-info"})  %>
+</div>
+</div>
+</div>
 
     <%= yield %>
   </body>
 </html>
-
