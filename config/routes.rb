@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/comics', to: 'comics#index'
   get '/comics/:id', to: 'comics#show', id: /\d+/, as: 'comic'
 
-  get '/search', to: 'heroes#search', as: 'search'
+  get '/searchcharacter', to: 'heroes#search', as: 'searchcharacter'
+  get '/searchcomic', to: 'comics#search', as: 'searchcomic'
+
 
   root to: 'heroes#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

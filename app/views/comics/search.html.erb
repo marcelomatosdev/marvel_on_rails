@@ -1,5 +1,9 @@
 <%=render partial: 'comics/search_form'%>
 <br>
+<p class="subtitle is-7">
+Found <%=pluralize(@comics.size, 'result')%>
+for the search term "<%=params[:search_term] %>".
+</p>
 <div class="columns is-multiline">
 <%@comics.each do |comic|%>
   <div class="column is-one-third">

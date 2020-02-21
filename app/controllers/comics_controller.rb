@@ -8,4 +8,8 @@ class ComicsController < ApplicationController
   def show
     @comic = Comic.find(params[:id])
   end
+
+  def search
+    @comics = Comic.where('title LIKE ?', "%#{params[:search_term]}%")
+  end
 end

@@ -1,3 +1,5 @@
+<%=render partial: 'heroes/search_form'%>
+<br>
 <p class="subtitle is-7">
 Found <%=pluralize(@heroes.size, 'result')%>
 for the search term "<%=params[:search_term] %>".
