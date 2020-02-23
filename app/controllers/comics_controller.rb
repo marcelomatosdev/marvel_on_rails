@@ -2,7 +2,7 @@
 
 class ComicsController < ApplicationController
   def index
-    @comics = Comic.all.order(:title).page(params[:page])
+    @comics = Comic.all.order(:title).page(params[:page]).per(30)
   end
 
   def show
@@ -10,6 +10,6 @@ class ComicsController < ApplicationController
   end
 
   def search
-    @comics = Comic.where('title LIKE ?', "%#{params[:search_term]}%").order(:title).page(params[:page])
+    @comics = Comic.where('title LIKE ?', "%#{params[:search_term]}%").order(:title).page(params[:page]).per(30)
   end
 end

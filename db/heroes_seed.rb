@@ -3,7 +3,7 @@
 def characters_url(offset)
   "#{@base_url}characters?limit=100&offset=#{offset}&#{@authorization}"
 end
-@number_of_characters = 20 # There are about 1,700 characters available in the Marvel API
+@number_of_characters = 500 # There are about 1,700 characters available in the Marvel API
 i = 0
 @count = 100
 # while @count == 100
